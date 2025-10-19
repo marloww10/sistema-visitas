@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "node --env-file=.env src/index.js",
+    "start": "node src/index.js",
     "dev": "nodemon --exec \"node --env-file=.env\" src/index.js",
     "seed": "node --env-file=.env src/utils/seed.js"
   },
@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
