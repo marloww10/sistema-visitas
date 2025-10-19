@@ -1,0 +1,271 @@
+body {
+  font-family: 'Arial', sans-serif;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 0 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin: 0;
+}
+
+#logoutBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 0.9rem;
+}
+
+#logoutBtn:hover {
+  background: #c82333;
+}
+
+section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+#auth {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+h2, h3 {
+  color: #007bff;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input, select, button {
+  margin: 0.3rem 0;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  font-size: 0.9rem;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+label {
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.visits-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.visit-card {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.visit-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.card-field {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.card-field .field-label {
+  font-weight: bold;
+  color: #555;
+  margin-right: 0.3rem;
+}
+
+.card-field:nth-child(7) { /* Observação */
+  grid-column: span 2;
+  font-style: italic;
+}
+
+.card-actions {
+  grid-column: span 2;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.4rem 0.8rem;
+  margin-left: 0.4rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkin-btn {
+  background: #28a745;
+  color: white;
+}
+
+.checkin-btn:hover {
+  background: #218838;
+}
+
+.checkout-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.checkout-btn:hover {
+  background: #c82333;
+}
+
+.cancel-btn {
+  background: #ffc107;
+  color: #000;
+}
+
+.cancel-btn:hover {
+  background: #e0a800;
+}
+
+#guard input, #guard select, #guard button {
+  display: inline-block;
+  width: auto;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+#exportReport {
+  background: #28a745;
+}
+
+#exportReport:hover {
+  background: #218838;
+}
+
+#loginMsg, #visitMsg, #registerMsg {
+  margin-top: 0.8rem;
+  color: #d9534f;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  #auth {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  input, select, button {
+    width: 100%;
+    margin: 0.3rem 0;
+    font-size: 0.85rem;
+  }
+
+  #guard input, #guard select, #guard button {
+    display: block;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+
+  .visit-card {
+    padding: 0.6rem;
+  }
+
+  .card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .card-field {
+    font-size: 0.85rem;
+  }
+
+  .card-field:nth-child(7) {
+    grid-column: span 1;
+  }
+
+  .card-actions {
+    grid-column: span 1;
+    text-align: center;
+  }
+
+  .action-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+  }
+
+  button, #logoutBtn {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}

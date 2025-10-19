@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Condomínio Parque Fluminense</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Controle de entrada</h1>
+    <button id="logoutBtn" hidden>Logout</button>
+  </header>
+
+  <main>
+    <section id="auth">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginMsg"></div>
+    </section>
+
+    <section id="resident" hidden>
+      <h2>Painel Morador</h2>
+      <form id="visitForm">
+        <input placeholder="Nome do visitante" id="visitorName" required />
+        <label for="visitType">Tipo de visita:</label>
+        <select id="visitType">
+          <option value="visita">Visita</option>
+          <option value="entrega_comida">Entrega de Comida</option>
+          <option value="entrega_encomenda">Entrega de Encomendas</option>
+        </select>
+        <label for="expectedDate">Data (obrigatória):</label>
+        <input type="date" id="expectedDate" required />
+        <label for="expectedTime">Hora (opcional):</label>
+        <input type="time" id="expectedTime" />
+        <input placeholder="Observação" id="note" />
+        <button type="submit">Cadastrar visita</button>
+      </form>
+      <div id="visitMsg"></div>
+      <button id="loadMyVisits">Carregar minhas visitas</button>
+      <ul id="myVisitsList" class="visits-list"></ul>
+    </section>
+
+    <section id="guard" hidden>
+      <h2>Painel Portaria</h2>
+      <input placeholder="Buscar por nome ou unidade" id="searchInput" />
+      <select id="statusFilter">
+        <option value="">Todos Status</option>
+        <option value="scheduled">Agendada</option>
+        <option value="arrived">Chegou</option>
+        <option value="left">Encerrada</option>
+        <option value="cancelled">Cancelada</option>
+      </select>
+      <select id="typeFilter">
+        <option value="">Todos Tipos</option>
+        <option value="visita">Visita</option>
+        <option value="entrega_comida">Entrega de Comida</option>
+        <option value="entrega_encomenda">Entrega de Encomendas</option>
+      </select>
+      <button id="applyFilters">Aplicar Filtros</button>
+      <button id="sortByDate" data-field="expectedAt">Ordenar por Data</button>
+      <button id="sortByName" data-field="visitorName">Ordenar por Nome</button>
+      <button id="sortByStatus" data-field="status">Ordenar por Status</button>
+      <button id="loadToday">Carregar visitas de hoje</button>
+      <button id="loadHistory">Carregar Histórico de Visitas</button>
+      <ul id="visitsList" class="visits-list"></ul>
+    </section>
+
+    <section id="admin" hidden>
+      <h2>Painel Administrador</h2>
+      <form id="registerForm">
+        <h3>Cadastrar Novo Morador</h3>
+        <input placeholder="Nome" id="regName" required />
+        <input type="email" placeholder="Email" id="regEmail" required />
+        <input type="password" placeholder="Senha" id="regPassword" required />
+        <select id="regRole">
+          <option value="resident">Morador</option>
+          <option value="guard">Porteiro</option>
+          <option value="admin">Administrador</option>
+        </select>
+        <input placeholder="Alameda (ex: Alameda das Flores)" id="regAlameda" required />
+        <input placeholder="Casa (ex: Casa 10)" id="regCasa" />
+        <input placeholder="Telefone (ex: (11) 99999-9999)" id="regPhone" required />
+        <button type="submit">Cadastrar</button>
+      </form>
+      <div id="registerMsg"></div>
+      <button id="exportReport">Exportar Relatório CSV</button>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
